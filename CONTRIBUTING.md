@@ -27,6 +27,12 @@ Running unit tests:
 $ pytest
 ```
 
+Running unit tests with coverage:
+
+```
+$ pytest -v --cov=usagelogger --cov-report=html
+```
+
 Precommit check:
 
 ```
