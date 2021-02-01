@@ -7,3 +7,5 @@ setuptools
 wheel 
 twine 
 pytest
+coverage
+pytest-cov
