@@ -48,3 +48,5 @@ tests/nosetests.xml
 pip-*
 __pycache__
 
+# coverage cache
+htmlcov
