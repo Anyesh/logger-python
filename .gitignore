@@ -50,3 +50,6 @@ __pycache__
 
 # coverage
 htmlcov
+
+# logs
+*.log
