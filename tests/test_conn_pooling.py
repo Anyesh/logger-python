@@ -27,7 +27,13 @@ class TestBaseLogger(unittest.TestCase):
             ]
             msg = json.dumps(message, separators=(",", ":"))
             self.logger.submit(msg)
-        with open("debug.log", "r") as f:
+        with open("test_debug.log", "r") as f:
             self.assertEqual(
-                sum(["new https connection" in x.lower() for x in f.readlines()]), 1
+                sum(
+                    [
+                        "new https connection (1): demo.resurface.io:443" in x.lower()
+                        for x in f.readlines()
+                    ]
+                ),
+                1 + 1,  # oNE FOR CURRENT TEST AND ONE FOR EARLIER
             )
