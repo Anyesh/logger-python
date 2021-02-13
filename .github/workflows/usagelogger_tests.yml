@@ -38,14 +38,16 @@ jobs:
           ImageOS: "ubuntu18"
           
           
-#       - name: Deploy to Heroku
-#         uses: AkhileshNS/heroku-deploy@v3.10.9
-#         env:
-#           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-#         with:
-#           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+      - name: Deploy to Heroku
+        uses: akhileshns/heroku-deploy@v3.10.9
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        with:
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          remote_branch: master
+          justlogin: true
              
-#       - run: heroku auth:whoami
+      - run: heroku auth:whoami
           
       - name: Run integration tests
         env:
