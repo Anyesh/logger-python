@@ -40,7 +40,8 @@ jobs:
       - uses: akhileshns/heroku-deploy@v3.10.9
         with:
           heroku_api_key: $HEROKU_API_KEY
-    
+      - run: heroku login -i
+          
       - name: Run integration tests
         env:
           AUTHTOKEN: ${{ secrets.AUTHTOKEN }}
