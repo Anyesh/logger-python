@@ -40,10 +40,11 @@ jobs:
       - uses: akhileshns/heroku-deploy@v3.10.9
         with:
           heroku_api_key: $HEROKU_API_KEY
+          heroku_email: "sthacruz@gmail.com" 
           dontautocreate: true
           justlogin: true
           
-      - run: heroku login -i
+      - run: heroku auth:whoami
           
       - name: Run integration tests
         env:
