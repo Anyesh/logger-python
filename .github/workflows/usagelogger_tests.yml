@@ -45,7 +45,7 @@ jobs:
         with:
           heroku_api_key: $HEROKU_API_KEY
           heroku_email: "sthacruz@gmail.com" 
-          heroku_app_name: "totoro_app"
+          heroku_app_name: ""
           remote_branch: main
           justlogin: true
           dontautocreate: true
