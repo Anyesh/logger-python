@@ -42,8 +42,7 @@ jobs:
           heroku_api_key: $HEROKU_API_KEY
           heroku_email: "sthacruz@gmail.com" 
           dontautocreate: true
-          justlogin: true
-          
+        
       - run: heroku auth:whoami
           
       - name: Run integration tests
