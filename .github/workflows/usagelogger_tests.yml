@@ -44,7 +44,6 @@ jobs:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         with:
           heroku_api_key: $HEROKU_API_KEY
-          remote_branch: master
           justlogin: true
           dontautocreate: true
         
