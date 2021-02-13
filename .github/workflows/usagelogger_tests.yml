@@ -36,10 +36,15 @@ jobs:
           bundler-cache: true
         env:
           ImageOS: "ubuntu18"
-
-      - name: Run integration tests
+      - uses: akhileshns/heroku-deploy@v3.10.9 # This is the action
         env:
           AUTHTOKEN: ${{ secrets.AUTHTOKEN }}
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          justlogin: true 
+    
+      - name: Run integration tests
         run: |
           git clone https://Anyesh:$AUTHTOKEN@github.com/Anyesh/logger-tests
           cd ./logger-tests
