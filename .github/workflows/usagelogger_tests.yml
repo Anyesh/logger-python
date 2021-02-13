@@ -15,7 +15,7 @@ jobs:
       - run: |
           git fetch --prune --unshallow
 
-      - name: Set up Python 3.7
+      - name: Set up Python 3
         uses: actions/setup-python@v1
         with:
           python-version: "3"
@@ -38,14 +38,14 @@ jobs:
           ImageOS: "ubuntu18"
           
           
-      - name: Deploy to Heroku
-        uses: AkhileshNS/heroku-deploy@v3.10.9
-        env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        with:
-          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+#       - name: Deploy to Heroku
+#         uses: AkhileshNS/heroku-deploy@v3.10.9
+#         env:
+#           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+#         with:
+#           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
              
-      - run: heroku auth:whoami
+#       - run: heroku auth:whoami
           
       - name: Run integration tests
         env:
