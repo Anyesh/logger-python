@@ -44,8 +44,6 @@ jobs:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         with:
           heroku_api_key: $HEROKU_API_KEY
-          heroku_email: "sthacruz@gmail.com" 
-          heroku_app_name: ""
           remote_branch: master
           justlogin: true
           dontautocreate: true
