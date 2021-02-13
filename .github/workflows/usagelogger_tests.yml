@@ -36,13 +36,10 @@ jobs:
           bundler-cache: true
         env:
           ImageOS: "ubuntu18"
-      - uses: akhileshns/heroku-deploy@v3.10.9 # This is the action
-        env:
           AUTHTOKEN: ${{ secrets.AUTHTOKEN }}
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          justlogin: true 
+      - run: |
+          heroku login
     
       - name: Run integration tests
         run: |
