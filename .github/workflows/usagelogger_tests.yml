@@ -44,9 +44,7 @@ jobs:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         with:
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-          remote_branch: master
-          dontautocreate: true
-        
+             
       - run: heroku auth:whoami
           
       - name: Run integration tests
