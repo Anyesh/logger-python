@@ -40,6 +40,9 @@ jobs:
       - uses: akhileshns/heroku-deploy@v3.10.9
         with:
           heroku_api_key: $HEROKU_API_KEY
+          dontautocreate: true
+          justlogin: true
+          
       - run: heroku login -i
           
       - name: Run integration tests
