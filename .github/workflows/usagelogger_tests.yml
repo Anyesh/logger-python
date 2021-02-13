@@ -46,7 +46,7 @@ jobs:
           heroku_api_key: $HEROKU_API_KEY
           heroku_email: "sthacruz@gmail.com" 
           heroku_app_name: ""
-          remote_branch: main
+          remote_branch: master
           justlogin: true
           dontautocreate: true
         
