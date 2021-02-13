@@ -36,12 +36,17 @@ jobs:
           bundler-cache: true
         env:
           ImageOS: "ubuntu18"
+          
+          
+      - name: Deploy to Heroku
+        uses: AkhileshNS/heroku-deploy@v3.10.9
+        env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-      - uses: akhileshns/heroku-deploy@v3.10.9
         with:
           heroku_api_key: $HEROKU_API_KEY
           heroku_email: "sthacruz@gmail.com" 
-          dontautocreate: true
+          heroku_app_name: "totoro_app"
+          remote_branch: main   
         
       - run: heroku auth:whoami
           
